@@ -11,9 +11,9 @@ create table bankingApp.employeeinfo (
 
 
 create table bankingApp.cardInfo (
-		card_id SERIAL primary key,
+		card_id INTEGER primary key,
 		customer_id INTEGER,
-		customer_balance DECIMAL
+		card_balance DECIMAL
 );
 
 CREATE TABLE bankingApp.customerInfo (
@@ -34,14 +34,14 @@ create table bankingApp.reciept (
 		CONSTRAINT customer_id_fk FOREIGN KEY (customer_id) REFERENCES bankingapp.customerinfo(customer_id)
 );
 
-INSERT INTO bankingApp.cardInfo VALUES (DEFAULT,3123001,43434.1);
-INSERT INTO bankingApp.cardInfo VALUES (DEFAULT,321303,323.2);
-INSERT INTO bankingApp.cardInfo VALUES (DEFAULT,323122,23.2);
-INSERT INTO bankingApp.cardInfo VALUES (DEFAULT,321323004,0.212);
+INSERT INTO bankingApp.cardInfo VALUES (0313,3123001,43434.1);
+INSERT INTO bankingApp.cardInfo VALUES (0314,321303,323.2);
+INSERT INTO bankingApp.cardInfo VALUES (0315,323122,23.2);
+INSERT INTO bankingApp.cardInfo VALUES (0316,321323004,0.212);
 
-INSERT INTO bankingApp.customerInfo VALUES (DEFAULT,'John','30',DEFAULT,'dsdsd');
-INSERT INTO bankingApp.customerInfo VALUES (DEFAULT,'Ann','19',DEFAULT,'dsdasdaffwerwqer');
-INSERT INTO bankingApp.customerInfo VALUES (DEFAULT,'jason','25',DEFAULT,'342rfewdfst');
-INSERT INTO bankingApp.customerInfo VALUES (DEFAULT,'Su','61',DEFAULT,'423edt55436grd');
+INSERT INTO bankingApp.customerInfo VALUES (3123001,'John','30',0313,'dsdsd');
+INSERT INTO bankingApp.customerInfo VALUES (321303,'Ann','19',0314,'dsdasdaffwerwqer');
+INSERT INTO bankingApp.customerInfo VALUES (323122,'jason','25',0315,'342rfewdfst');
+INSERT INTO bankingApp.customerInfo VALUES (321323004,'Su','61',0316,'423edt55436grd');
 
 INSERT INTO bankingApp.reciept VALUES (DEFAULT,DEFAULT,'+1000',CURRENT_DATE);
